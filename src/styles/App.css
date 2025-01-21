@@ -1,26 +1,131 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #333;
+  background-color: #f4f4f9;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .app-container {
-    text-align: center;
-    padding: 20px;
-  }
-  
+  max-width: 1200px;
+  margin: 20px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.user-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.user-list th,
+.user-list td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.user-list th {
+  background: #2c3e50;
+  color: #fff;
+}
+
+.user-list td {
+  background: #f9f9f9;
+}
+
+button {
+  padding: 8px 16px;
+  margin: 4px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:focus {
+  outline: none;
+}
+
+.edit-button {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.user-form {
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.user-form h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.user-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.user-form button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
   .user-list table {
-    width: 100%;
-    margin: 20px auto;
-    border-collapse: collapse;
+    font-size: 0.9rem;
   }
-  
-  .user-list th, .user-list td {
-    border: 1px solid #ddd;
+
+  .user-list th,
+  .user-list td {
     padding: 8px;
   }
-  
-  .user-form {
-    margin: 20px auto;
-  }
-  
+
   .user-form input {
-    margin: 5px;
-    padding: 10px;
-    width: 300px;
+    font-size: 0.9rem;
   }
-  
+}
+app.css edhu

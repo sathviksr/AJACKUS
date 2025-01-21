@@ -1,41 +1,3 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
-// export default App
-
-
-
 import React, { useState, useEffect } from 'react';
 import { fetchUsers, deleteUser, addUser, updateUser } from './api/api';
 import UserList from './components/UserList';
@@ -46,10 +8,12 @@ const App = () => {
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
 
+  // Load users when the component mounts
   useEffect(() => {
     loadUsers();
   }, []);
 
+  // Fetch all users from the API
   const loadUsers = async () => {
     try {
       const response = await fetchUsers();
@@ -59,25 +23,29 @@ const App = () => {
     }
   };
 
+  // Delete a user by ID
   const handleDelete = async (id) => {
     try {
       await deleteUser(id);
-      setUsers(users.filter(user => user.id !== id));
+      setUsers(users.filter((user) => user.id !== id));
     } catch (error) {
       alert('Failed to delete user!');
     }
   };
 
+  // Add or update a user
   const handleAddOrUpdate = async (user) => {
     try {
       if (user.id) {
+        // Update an existing user
         await updateUser(user.id, user);
-        setUsers(users.map(u => (u.id === user.id ? user : u)));
+        setUsers(users.map((u) => (u.id === user.id ? user : u)));
       } else {
+        // Add a new user
         const response = await addUser(user);
         setUsers([...users, response.data]);
       }
-      setSelectedUser(null);
+      setSelectedUser(null); // Reset the selected user after save
     } catch (error) {
       alert('Failed to save user!');
     }
@@ -86,7 +54,9 @@ const App = () => {
   return (
     <div className="app-container">
       <h1>User Management</h1>
+      {/* User list component */}
       <UserList users={users} onDelete={handleDelete} onEdit={setSelectedUser} />
+      {/* User form for adding or editing */}
       <UserForm user={selectedUser} onSave={handleAddOrUpdate} />
     </div>
   );

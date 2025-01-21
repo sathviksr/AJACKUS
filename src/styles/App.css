@@ -66,10 +66,12 @@ button {
   border-radius: 5px;
   font-size: 0.9rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: scale(1.05);
 }
 
 button:focus {
@@ -101,17 +103,39 @@ button:focus {
 }
 
 .user-form input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
+  width: 90%;
+  padding: 8px 10px;
+  margin: 8px auto;
+  display: block;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.user-form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
 }
 
 .user-form button {
   background-color: #007bff;
   color: #fff;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-form button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -127,5 +151,46 @@ button:focus {
   .user-form input {
     font-size: 0.9rem;
   }
+
+  .pagination {
+    display: flex;
+    justify-content: center; /* Center-align pagination */
+    align-items: center;
+    margin: 20px auto; /* Center horizontally and add vertical spacing */
+    gap: 10px; /* Spacing between buttons */
+    text-align: center; /* Align text centrally */
+  }
+  
+  .pagination-button {
+    padding: 8px 16px; /* Add padding for clickable area */
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination-button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  .pagination-button:hover:not(:disabled) {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  .pagination-button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+  
+  .pagination-ellipsis {
+    font-size: 1.2rem;
+    color: #666;
+    padding: 0 5px;
+  }
+      
 }
-app.css edhu

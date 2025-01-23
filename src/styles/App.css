@@ -1,196 +1,144 @@
-:root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: #333;
-  background-color: #f4f4f9;
-
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.app-container {
-  max-width: 1200px;
-  margin: 20px;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-h1 {
-  font-size: 2rem;
-  text-align: center;
-  color: #2c3e50;
-  margin-bottom: 20px;
-}
-
-.user-list table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-}
-
-.user-list th,
-.user-list td {
-  text-align: left;
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-
-.user-list th {
-  background: #2c3e50;
-  color: #fff;
-}
-
-.user-list td {
-  background: #f9f9f9;
-}
-
-button {
-  padding: 8px 16px;
-  margin: 4px;
-  border: none;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  opacity: 0.9;
-  transform: scale(1.05);
-}
-
-button:focus {
-  outline: none;
-}
-
-.edit-button {
-  background-color: #4caf50;
-  color: #fff;
-}
-
-.delete-button {
-  background-color: #f44336;
-  color: #fff;
-}
-
-.user-form {
-  padding: 20px;
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-.user-form h2 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.user-form input {
-  width: 90%;
-  padding: 8px 10px;
-  margin: 8px auto;
-  display: block;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-}
-
-.user-form input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  outline: none;
-}
-
-.user-form button {
-  background-color: #007bff;
-  color: #fff;
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.user-form button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-  .user-list table {
-    font-size: 0.9rem;
+  :root {
+    font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: #333;
+    background-color: #f4f4f9;
+  
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-
+  
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .app-container {
+    max-width: 1200px;
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .user-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
   .user-list th,
   .user-list td {
-    padding: 8px;
-  }
-
-  .user-form input {
-    font-size: 0.9rem;
-  }
-
-  .pagination {
-    display: flex;
-    justify-content: center; /* Center-align pagination */
-    align-items: center;
-    margin: 20px auto; /* Center horizontally and add vertical spacing */
-    gap: 10px; /* Spacing between buttons */
-    text-align: center; /* Align text centrally */
-  }
-  
-  .pagination-button {
-    padding: 8px 16px; /* Add padding for clickable area */
+    text-align: left;
+    padding: 10px;
     border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    color: #333;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
   }
   
-  .pagination-button.active {
-    background-color: #007bff;
-    color: white;
-    border-color: #007bff;
-  }
-  
-  .pagination-button:hover:not(:disabled) {
-    background-color: #0056b3;
+  .user-list th {
+    background: #2c3e50;
     color: #fff;
   }
   
-  .pagination-button:disabled {
-    background-color: #e0e0e0;
-    cursor: not-allowed;
+  .user-list td {
+    background: #f9f9f9;
   }
   
-  .pagination-ellipsis {
-    font-size: 1.2rem;
-    color: #666;
-    padding: 0 5px;
+  button {
+    padding: 8px 16px;
+    margin: 4px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
-      
-}
+  
+  button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  .edit-button {
+    background-color: #4caf50;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .edit-button:hover {
+    background-color: #45a049;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .delete-button:hover {
+    background-color: #e53935;
+  }
+  
+  .user-form {
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .user-form h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .user-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .user-form button {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+    .user-list table {
+      font-size: 0.9rem;
+    }
+  
+    .user-list th,
+    .user-list td {
+      padding: 8px;
+    }
+  
+    .user-form input {
+      font-size: 0.9rem;
+    }
+  }
+  

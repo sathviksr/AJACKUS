@@ -10,7 +10,47 @@ The objective of this project is to develop a simple web application where users
     1    User List Display:
     ◦    Displays a list of users with details including ID, First Name, Last Name, Email, and Department.
     ◦    Users are displayed in a responsive table format.
+User Management App:
 
+A simple web application for managing user details. Users can view, add, edit, and delete user data using a mock backend API.
+
+Features:
+- View a list of users.
+- Add new users.
+- Edit existing user details.
+- Delete users.
+- Basic error handling for API requests.
+
+Technologies Used:
+- React (with Vite)
+- Axios for API requests
+- JSONPlaceholder for mock API
+- JavaScript
+- Basic CSS for styling
+
+Setup Instructions:
+Clone the repository:
+   bash
+   git clone https://github.com/sathviksr/AJACKUS_User_Management
+   cd AJACKUS_User_Management
+
+Install dependencies:
+npm install
+
+Run the development server:
+npm run dev
+
+Project can be viewed in this link:
+https://ajackus-user-management.vercel.app/
+
+Challenges Faced
+	•	Mock API Limitations: The JSONPlaceholder API doesn’t persist changes, so added or edited data is only simulated for demonstration purposes.
+	•	Error Handling: Handling errors gracefully for different API scenarios (e.g., network errors or invalid responses) required careful implementation.
+	•	UI Design: Ensuring the layout was clean and functional without overcomplicating the styling took some iteration.
+
+
+Future Improvements
+	•	Responsive Design: Improve the layout to work better on mobile and tablet devices.
     2    User Actions:
     ◦    Buttons for "Add", "Edit", and "Delete" are available for user interactions.
 

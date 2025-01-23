@@ -5,71 +5,61 @@ import UserForm from './components/UserForm';
 import './styles/App.css';
 
 const App = () => {
-  const [users, setUsers] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 3; // Number of users displayed per page
+  const [users, setUsers] = useState([]);
+  const [selectedUser, setSelectedUser] = useState(null);
 
-  useEffect(() => {
-    loadUsers();
-  }, []);
+  // Load users when the component mounts
+  useEffect(() => {
+    loadUsers();
+  }, []);
 
-  const loadUsers = async () => {
-    try {
-      const response = await fetchUsers();
-      setUsers(response.data);
-    } catch (error) {
-      alert('Failed to fetch users!');
-    }
-  };
+  // Fetch all users from the API
+  const loadUsers = async () => {
+    try {
+      const response = await fetchUsers();
+      setUsers(response.data);
+    } catch (error) {
+      alert('Failed to fetch users!');
+    }
+  };
 
-  const handleDelete = async (id) => {
-    try {
-      await deleteUser(id);
-      setUsers(users.filter((user) => user.id !== id));
-    } catch (error) {
-      alert('Failed to delete user!');
-    }
-  };
+  // Delete a user by ID
+  const handleDelete = async (id) => {
+    try {
+      await deleteUser(id);
+      setUsers(users.filter((user) => user.id !== id));
+    } catch (error) {
+      alert('Failed to delete user!');
+    }
+  };
 
-  const handleAddOrUpdate = async (user) => {
-    try {
-      if (user.id) {
-        await updateUser(user.id, user);
-        setUsers(users.map((u) => (u.id === user.id ? user : u)));
-      } else {
-        const response = await addUser(user);
-        setUsers([...users, response.data]);
-      }
-      setSelectedUser(null);
-    } catch (error) {
-      alert('Failed to save user!');
-    }
-  };
+  // Add or update a user
+  const handleAddOrUpdate = async (user) => {
+    try {
+      if (user.id) {
+        // Update an existing user
+        await updateUser(user.id, user);
+        setUsers(users.map((u) => (u.id === user.id ? user : u)));
+      } else {
+        // Add a new user
+        const response = await addUser(user);
+        setUsers([...users, response.data]);
+      }
+      setSelectedUser(null); // Reset the selected user after save
+    } catch (error) {
+      alert('Failed to save user!');
+    }
+  };
 
-  const handlePageChange = (page) => setCurrentPage(page);
-
-  const startIndex = (currentPage - 1) * usersPerPage;
-  const paginatedUsers = users.slice(startIndex, startIndex + usersPerPage);
-
-  return (
-    <div className="app-container">
-      <h1>User Management</h1>
-      <UserList
-        users={paginatedUsers}
-        onDelete={handleDelete}
-        onEdit={setSelectedUser}
-        currentPage={currentPage}
-        totalPages={Math.ceil(users.length / usersPerPage)}
-        onPageChange={handlePageChange}
-      />
-      <UserForm
-        user={selectedUser}
-        onSave={handleAddOrUpdate}
-        resetUserForm={() => setSelectedUser(null)}
-      />
-    </div>
-  );
+  return (
+    <div className="app-container">
+      <h1>User Management</h1>
+      {/* User list component */}
+      <UserList users={users} onDelete={handleDelete} onEdit={setSelectedUser} />
+      {/* User form for adding or editing */}
+      <UserForm user={selectedUser} onSave={handleAddOrUpdate} />
+    </div>
+  );
 };
 
 export default App;

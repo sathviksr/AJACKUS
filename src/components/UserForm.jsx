@@ -25,12 +25,22 @@ const UserForm = ({ user, onSave }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSave(formData);
+  };
+
+  const handleCancel = () => {
+    setFormData({
+      id: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      department: '',
+    });
   };
 
   return (
@@ -70,6 +80,7 @@ const UserForm = ({ user, onSave }) => {
           required
         />
         <button type="submit">Save</button>
+        <button type="button" onClick={handleCancel}>Cancel</button>
       </form>
     </div>
   );

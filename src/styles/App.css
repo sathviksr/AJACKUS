@@ -1,144 +1,25 @@
-  :root {
-    font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-  
-    color-scheme: light dark;
-    color: #333;
-    background-color: #f4f4f9;
-  
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  .app-container {
-    max-width: 1200px;
-    margin: 20px;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-  }
-  
-  h1 {
-    font-size: 2rem;
+.app-container {
     text-align: center;
-    color: #2c3e50;
-    margin-bottom: 20px;
+    padding: 20px;
   }
   
   .user-list table {
     width: 100%;
+    margin: 20px auto;
     border-collapse: collapse;
-    margin: 20px 0;
   }
   
-  .user-list th,
-  .user-list td {
-    text-align: left;
-    padding: 10px;
+  .user-list th, .user-list td {
     border: 1px solid #ddd;
-  }
-  
-  .user-list th {
-    background: #2c3e50;
-    color: #fff;
-  }
-  
-  .user-list td {
-    background: #f9f9f9;
-  }
-  
-  button {
-    padding: 8px 16px;
-    margin: 4px;
-    border: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  button:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
-  }
-  
-  button:focus {
-    outline: none;
-  }
-  
-  .edit-button {
-    background-color: #4caf50;
-    color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .edit-button:hover {
-    background-color: #45a049;
-  }
-  
-  .delete-button {
-    background-color: #f44336;
-    color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .delete-button:hover {
-    background-color: #e53935;
+    padding: 8px;
   }
   
   .user-form {
-    padding: 20px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-  
-  .user-form h2 {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-    color: #333;
+    margin: 20px auto;
   }
   
   .user-form input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+    margin: 5px;
+    padding: 10px;
+    width: 300px;
   }
-  
-  .user-form button {
-    background-color: #007bff;
-    color: #fff;
-    font-weight: 500;
-  }
-  
-  @media (max-width: 768px) {
-    .user-list table {
-      font-size: 0.9rem;
-    }
-  
-    .user-list th,
-    .user-list td {
-      padding: 8px;
-    }
-  
-    .user-form input {
-      font-size: 0.9rem;
-    }
-  }
-  
